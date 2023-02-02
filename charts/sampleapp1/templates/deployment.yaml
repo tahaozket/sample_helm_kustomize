@@ -29,6 +29,8 @@ spec:
           image: {{ .Values.image.repository }}:{{ .Values.image.tag}}
           imagePullPolicy: Always # {{ .Values.image.pullPolicy }}
           env:
+          - name: DEPLOYED_ENV
+            value: {{ .Values.deployedEnv }}
           - name: INSTANCE_NAME
             valueFrom:
               fieldRef:
