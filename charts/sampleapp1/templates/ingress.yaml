@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: sampleapp1-ingress
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: hello
+spec:
+  defaultBackend:
+    service:
+      name: sampleapp1-svc
+      port:
+        number: 8080
+
